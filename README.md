@@ -94,6 +94,51 @@ Dive into the world of data aggregation within MongoDB. Understand how to use Mo
 
 Explore the importance of indexing within MongoDB collections for improved query performance. Learn how to strategically create indexes on fields to accelerate data retrieval and aggregation processes.
 
+5.	Xây dựng Index cho các Collection
+Dựa trên các điều kiện lọc trong phần truy vấn ở mục 4 ta có thể tạo index cho các collection để tăng tốc độ xử lý như sau:
+
+Create index for Collection user filter gender, native_country
+
+```ind
+db.user.createIndex({ "gender": 1 })
+db.user.createIndex({ "native_country": 1 })
+```
+
+Create index for Collection occupation filter hours_per_week
+
+```ind
+db.occupation.createIndex({ "hours_per_week": 1 })
+```
+
+Create index for Collection finance filter income_bracket, total
+
+```ind
+db.finance.createIndex({ "income_bracket": 1 })
+db.finance.createIndex({ "total": 1 })
+```
+
+Create index for Collection relationship
+
+```ind
+db.relationship.createIndex({ "relationship": 1 })
+db.relationship.createIndex({ "marital_status": 1 })
+```
+
+```ind
+db.relationship.createIndex({ "relationship": 1, "marital_status": 1 })
+```
+
+Create index for Collection education
+
+```ind
+db.education.createIndex({ "education": 1 })
+db.education.createIndex({ "education_num": 1 })
+```
+
+```ind
+db.education.createIndex({ "education": 1, "education_num": 1  })
+```
+
 ## Usage
 
 - Clone or fork this repository to access invaluable resources for constructing a MongoDB-based Data Warehouse.
